@@ -38,7 +38,7 @@ if (!isNaN(userNumber)) {
   // Shows the factorial of the number
   console.log(`The factorial is: ${factorial(Number(userNumber))}`)
 } else {
-   // Shows if the number is invalid
+  // Shows if the number is invalid
   console.log('Invalid Input!')
 }
 console.log('\nDone.')
