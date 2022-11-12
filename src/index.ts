@@ -1,6 +1,6 @@
 /**
  * The program is the classic
- * Recurrsion rearange program
+ * factorial program
  *
  * By:      Jackson Naufal
  * Version: 1.0
@@ -9,31 +9,36 @@
 
 import promptSync from 'prompt-sync'
 
+const prompt = promptSync()
 /**
  *
- * This is the recurrsion function.
+ * This is the factorial function.
  *
- * @param {string} userWord the user input.
- * @returns {string} the string thats reversed.
+ * @param {number} userNumber the user input.
+ * @returns {number} the factorial of the number.
  */
-function recurrsionString(userWord: string): string {
-  if (userWord === '') {
-    return userWord
+function factorial(userNumber: number): number {
+  if (userNumber < 0) {
+    return -1
+  } else if (userNumber === 0) {
+    return 1
   } else {
-    return recurrsionString(userWord.slice(1)) + userWord.slice(0, 1)
+    return factorial(userNumber - 1) * userNumber
   }
 }
 
-const prompt = promptSync()
-
 // Asks for the users input
 console.log('This program reverses a String!')
-const userWord = prompt('Enter your word: ')
+const userNum = prompt('Enter your word: ')
+const userNumber = parseInt(userNum)
 
-// Shows the original word
-console.log(`This is the Original Word: ${userWord}`)
-
-// Shows the reversed string word.
-console.log(`The reversed word is: ${recurrsionString(userWord)}`)
-
+if (!isNaN(userNumber)) {
+  // Shows the original number
+  console.log(`This is the Original Number: ${userNumber}`)
+  // Shows the factorial of the number
+  console.log(`The factorial is: ${factorial(Number(userNumber))}`)
+} else {
+   // Shows if the number is invalid
+  console.log('Invalid Input!')
+}
 console.log('\nDone.')
