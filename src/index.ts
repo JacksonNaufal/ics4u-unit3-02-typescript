@@ -28,7 +28,7 @@ function factorial(userNumber: number): number {
 }
 
 // Asks for the users input
-console.log('This program reverses a String!')
+console.log('This program factorials a Number!')
 const userNum = prompt('Enter your word: ')
 const userNumber = parseInt(userNum)
 
